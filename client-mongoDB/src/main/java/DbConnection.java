@@ -5,7 +5,7 @@ import org.bson.Document;
 
 
 public class DbConnection {
-    public static void main() {
+    public static void main(String[] args) {
         try {
 
 
