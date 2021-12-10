@@ -3,7 +3,8 @@
 FROM openjdk:16-alpine3.13
 
 WORKDIR /app
-
+#while running the app dont forget to mount volume
+#docker run --volume=/tmp/csv:/usr/src/app my_image
 COPY .mvn/ .mvn
 
 #  Set Up the Maven Wrapper
@@ -16,5 +17,8 @@ COPY mvnw client-mongoDB.iml ./
 RUN ./mvnw dependency:go-offline
 
 COPY src ./src
+
+RUN mkdir -p csvFile
+RUN touch /csvFile/output.csv
 
 CMD ["./mvnw", "spring-boot:run"]

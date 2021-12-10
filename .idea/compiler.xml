@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="client-mongoDB" target="1.5" />
+      <module name="client-mongoDB" target="1.8" />
       <module name="Server (SUT)" target="1.5" />
       <module name="untitled" target="1.5" />
     </bytecodeTargetLevel>
