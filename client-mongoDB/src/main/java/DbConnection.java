@@ -19,7 +19,7 @@ public class DbConnection {
             MongoCollection<Document> table = db.getCollection("student");
 
             for (int i = 0; i < 10; i++) {
-
+                System.out.println(i);
                 Document document = new Document("name", "Michael Kora");
                 document.append("id", 123456);
 
