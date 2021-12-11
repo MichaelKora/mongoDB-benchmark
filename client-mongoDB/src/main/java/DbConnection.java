@@ -9,7 +9,7 @@ import java.util.Date;
 
 public class DbConnection {
     public static void main(String[] args) {
-        DataWriter dataWriter = new DataWriter("/csvFile/output.csv");
+        DataWriter dataWriter = new DataWriter(".d/csvFile/output.csv");
         try {
 
 
