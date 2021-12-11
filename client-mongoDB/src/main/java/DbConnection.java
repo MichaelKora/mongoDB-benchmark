@@ -6,6 +6,8 @@ import org.bson.Document;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import static java.lang.Thread.sleep;
+
 
 public class DbConnection {
     public static void main(String[] args) {
@@ -17,6 +19,7 @@ public class DbConnection {
             DataWriter dataWriter = new DataWriter("./csvFile/output.csv");
 
             for (int i = 0; i < 10; i++) {
+                System.out.println(i);
                 //Document document = new Document("name", "Michael Kora");
                 //document.append("id", 123456);
 
@@ -31,6 +34,8 @@ public class DbConnection {
                 dataWriter.writeLine(new String[]{formatter.format(start), formatter.format(end), "instert"});
 
            }
+            sleep(120000);
+            System.out.print("done");
         } catch (Exception e) {
             e.printStackTrace();
         }
