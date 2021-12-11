@@ -18,7 +18,7 @@ public class DbConnection {
             MongoCollection<Document> table = db.getCollection("student");
 
             DataWriter dataWriter = new DataWriter("./csvFile/output.csv");
-            for (int i = 0; i < 10; i++) {
+            //for (int i = 0; i < 10; i++) {
                 System.out.println(i);
                 Document document = new Document("name", "Michael Kora");
                 document.append("id", 123456);
@@ -33,7 +33,7 @@ public class DbConnection {
 
                 dataWriter.writeLine(new String[]{formatter.format(start), formatter.format(end), "instert"});
 
-            }
+          //  }
         } catch (Exception e) {
             e.printStackTrace();
         }
