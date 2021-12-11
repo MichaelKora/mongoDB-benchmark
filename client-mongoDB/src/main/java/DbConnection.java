@@ -10,7 +10,7 @@ import java.util.Date;
 public class DbConnection {
     public static void main(String[] args) {
         try {
-            MongoClient mongoClient = new MongoClient("localhost", 27017);
+            MongoClient mongoClient = new MongoClient("127.0.0.1", 27017);
             MongoDatabase db = mongoClient.getDatabase("benchmark");
             MongoCollection<Document> table = db.getCollection("student");
 
