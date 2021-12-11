@@ -9,7 +9,6 @@ import java.util.Date;
 
 public class DbConnection {
     public static void main(String[] args) {
-        DataWriter dataWriter = new DataWriter("./csvFile/output.csv");
         try {
 
 
@@ -18,6 +17,7 @@ public class DbConnection {
 
             MongoCollection<Document> table = db.getCollection("student");
 
+            DataWriter dataWriter = new DataWriter("./csvFile/output.csv");
             for (int i = 0; i < 10; i++) {
                 System.out.println(i);
                 Document document = new Document("name", "Michael Kora");
