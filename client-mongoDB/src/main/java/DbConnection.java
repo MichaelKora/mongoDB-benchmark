@@ -10,26 +10,21 @@ import java.util.Date;
 public class DbConnection {
     public static void main(String[] args) {
         try {
-            MongoClient mongoClient = new MongoClient("127.0.0.1", 27019);
-            MongoDatabase db = mongoClient.getDatabase("benchmark");
-            MongoCollection<Document> table = db.getCollection("student");
+            //MongoClient mongoClient = new MongoClient("localhost", 27017);
+            //MongoDatabase db = mongoClient.getDatabase("benchmark");
+            //MongoCollection<Document> table = db.getCollection("student");
 
             DataWriter dataWriter = new DataWriter("./csvFile/output.csv");
 
             for (int i = 0; i < 10; i++) {
-                System.out.println(i);
-                Document document = new Document("name", "Michael Kora");
-                document.append("id", 123456);
-                System.out.println(5555555);
+                //Document document = new Document("name", "Michael Kora");
+                //document.append("id", 123456);
 
                 SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
-                System.out.println(22222);
 
                 Date start = new Date(System.currentTimeMillis());
-                System.out.println(11111);
-
                 //write in database
-                table.insertOne(document);
+                //table.insertOne(document);
 
                 Date end = new Date(System.currentTimeMillis());
 
