@@ -10,16 +10,20 @@ import java.util.Date;
 public class DbConnection {
     public static void main(String[] args) {
         try {
+            System.out.println(11111);
 
 
             MongoClient mongoClient = new MongoClient("localhost", 27017);
+            System.out.println(22222);
             MongoDatabase db = mongoClient.getDatabase("benchmark");
-
+            System.out.println(33333);
             MongoCollection<Document> table = db.getCollection("student");
-
+            System.out.println(44444);
             DataWriter dataWriter = new DataWriter("./csvFile/output.csv");
-            //for (int i = 0; i < 10; i++) {
-             //   System.out.println(i);
+
+            System.out.println(5555555);
+            for (int i = 0; i < 10; i++) {
+                System.out.println(i);
                 Document document = new Document("name", "Michael Kora");
                 document.append("id", 123456);
 
@@ -33,7 +37,7 @@ public class DbConnection {
 
                 dataWriter.writeLine(new String[]{formatter.format(start), formatter.format(end), "instert"});
 
-          //  }
+           }
         } catch (Exception e) {
             e.printStackTrace();
         }
