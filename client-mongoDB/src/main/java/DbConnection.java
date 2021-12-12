@@ -1,4 +1,7 @@
+import com.mongodb.DBCollection;
 import com.mongodb.MongoClient;
+import com.mongodb.MongoClientURI;
+import com.mongodb.MongoCredential;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
@@ -8,13 +11,19 @@ import java.util.Date;
 
 
 public class DbConnection {
-    public static void main(String[] args) {
+    public static void main( String args[] ) {
         try {
-            MongoClient mongoClient = new MongoClient("localhost", 27017);
-            MongoDatabase db = mongoClient.getDatabase("benchmark");
-            MongoCollection<Document> table = db.getCollection("student");
+            MongoClient mongoClient = new MongoClient("localhost" , 27017 );
 
-            System.out.print("Ananas");
+            // Creating Credentials
+            MongoCredential  credential = MongoCredential.createCredential("sampleUser", "benchmarkDb",
+                    "password".toCharArray());
+            System.out.println("Connected to the database successfully");
+
+            // create Db and collection
+            MongoDatabase db = mongoClient.getDatabase("benchmarkDb");
+            MongoCollection<Document> collection = db.getCollection("student");
+            // Create csv file
             DataWriter dataWriter = new DataWriter("output.csv");
 
             for (int i = 0; i < 10; i++) {
@@ -22,13 +31,12 @@ public class DbConnection {
                 // data to be inserted
                 Document document = new Document("name", "Michael Kora");
                 document.append("id", 123456);
-                System.out.print("Apfel");
 
                 SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
 
                 Date start = new Date(System.currentTimeMillis());
                 //write in database
-                table.insertOne(document);
+                collection.insertOne(document);
 
                 Date end = new Date(System.currentTimeMillis());
 
