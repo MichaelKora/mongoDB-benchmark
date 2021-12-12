@@ -19,7 +19,7 @@ public class DbConnection {
             MongoDatabase db = mongoClient.getDatabase("benchmark");
             MongoCollection<Document> table = db.getCollection("student");
 
-            DataWriter dataWriter = new DataWriter("./csvFile/output.csv");
+            DataWriter dataWriter = new DataWriter("output.csv");
 
             for (int i = 0; i < 10; i++) {
                 System.out.println(i);
@@ -36,9 +36,9 @@ public class DbConnection {
                 Date end = new Date(System.currentTimeMillis());
 
                 dataWriter.writeLine(new String[]{formatter.format(start), formatter.format(end), "instert"});
-
-
             }
+
+            dataWriter.closeWriter();
         } catch (Exception e) {
             e.printStackTrace();
         }
