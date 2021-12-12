@@ -13,7 +13,7 @@ import java.util.Date;
 public class DbConnection {
     public static void main( String args[] ) {
         try {
-            MongoClient mongoClient = new MongoClient("host.docker.internal" , 27017 );
+            MongoClient mongoClient = new MongoClient("127.0.0.1" , 27017 );
 
             // Creating Credentials
             MongoCredential  credential = MongoCredential.createCredential("sampleUser", "benchmarkDb",
