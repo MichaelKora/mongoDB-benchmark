@@ -15,7 +15,7 @@ import static java.lang.Thread.sleep;
 public class DbConnection {
     public static void main(String[] args) {
         try {
-            /*MongoClient mongoClient = new MongoClient("localhost", 27017);
+            MongoClient mongoClient = new MongoClient("localhost", 27017);
             MongoDatabase db = mongoClient.getDatabase("benchmark");
             MongoCollection<Document> table = db.getCollection("student");
 
@@ -23,6 +23,7 @@ public class DbConnection {
 
             for (int i = 0; i < 10; i++) {
                 System.out.println(i);
+                // data to be inserted
                 Document document = new Document("name", "Michael Kora");
                 document.append("id", 123456);
 
@@ -38,31 +39,6 @@ public class DbConnection {
 
 
             }
-            dataWriter.closeWriter();
-*/
-            // Our example data
-            List<List<String>> rows = Arrays.asList(
-                    Arrays.asList("Jean", "author", "Java"),
-                    Arrays.asList("David", "editor", "Python"),
-                    Arrays.asList("Scott", "editor", "Node.js")
-            );
-
-            FileWriter csvWriter = new FileWriter("new.csv");
-            csvWriter.append("Name");
-            csvWriter.append(",");
-            csvWriter.append("Role");
-            csvWriter.append(",");
-            csvWriter.append("Topic");
-            csvWriter.append("\n");
-
-            for (List<String> rowData : rows) {
-                csvWriter.append(String.join(",", rowData));
-                csvWriter.append("\n");
-            }
-
-            csvWriter.flush();
-            csvWriter.close();
-
         } catch (Exception e) {
             e.printStackTrace();
         }

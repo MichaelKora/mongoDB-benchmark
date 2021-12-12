@@ -4,7 +4,7 @@ FROM openjdk:16-alpine3.13
 
 WORKDIR /app
 #while running the app dont forget to mount volume
-#docker run --volume=/tmp/csvFile:/app/csvFile client-mdb
+# docker run -v $(pwd):/app client-mg
 COPY .mvn/ .mvn
 
 #  Set Up the Maven Wrapper
