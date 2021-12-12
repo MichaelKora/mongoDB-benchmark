@@ -18,7 +18,7 @@ RUN ./mvnw dependency:go-offline
 
 COPY src ./src
 
-RUN mkdir -p csvFile
-RUN touch ./csvFile/output.csv
+#RUN mkdir -p /app/csvFile
+#RUN touch /app/csvFile/output.csv
 
 CMD ["./mvnw", "spring-boot:run"]
