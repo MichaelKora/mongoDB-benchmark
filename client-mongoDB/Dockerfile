@@ -16,7 +16,7 @@ COPY mvnw client-mongoDB.iml ./
 
 RUN ./mvnw dependency:go-offline
 
-RUN curl localhost:27017
+#RUN curl localhost:27017
 COPY src ./src
 
 #RUN mkdir -p /app/csvFile
