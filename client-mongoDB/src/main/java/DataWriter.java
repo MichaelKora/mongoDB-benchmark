@@ -8,7 +8,17 @@ public class DataWriter {
     public DataWriter(String name) {
         this.fileName = name;
         try {
+
             csvWriter = new FileWriter(this.fileName);
+            csvWriter.append("TimeZone");
+            csvWriter.append(",");
+            csvWriter.append("Start");
+            csvWriter.append(",");
+            csvWriter.append("End");
+            csvWriter.append(",");
+            csvWriter.append("Command");
+            csvWriter.append("\n");
+
         } catch (IOException e) {
             e.printStackTrace();
         }
