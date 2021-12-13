@@ -5,10 +5,11 @@ FROM openjdk:16-alpine3.13
 WORKDIR /app
 # while running the app dont forget to mount volume
 # docker run -v $(pwd):/app client-mg
-COPY .mvn/ .mvn
 
 #  Set Up the Maven Wrapper
-#mvn -N io.takari:maven:wrapper -Dmaven=3.5.2
+mvn -N io.takari:maven:wrapper -Dmaven=3.5.2
+
+COPY .mvn/ .mvn
 
 COPY mvnw pom.xml ./
 
