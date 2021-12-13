@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/client-mongoDB/client-mongoDB.iml" filepath="$PROJECT_DIR$/client-mongoDB/client-mongoDB.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/mongoDB-benchmark.iml" filepath="$PROJECT_DIR$/.idea/mongoDB-benchmark.iml" />
+      <module fileurl="file://$PROJECT_DIR$/client-mongoDB/.mvn/wrapper/wrapper.iml" filepath="$PROJECT_DIR$/client-mongoDB/.mvn/wrapper/wrapper.iml" />
     </modules>
   </component>
 </project>
