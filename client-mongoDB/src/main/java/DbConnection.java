@@ -35,12 +35,14 @@ public class DbConnection {
 
                 SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS");
                 Date start = new Date(System.currentTimeMillis());
+                long startInt = System.currentTimeMillis();
                 //write in database
                 collection.insertOne(document);
 
-                Date end = new Date(System.currentTimeMillis());
+                long end = System.currentTimeMillis();
+                long duration = end - startInt;
 
-                dataWriter.writeLine(new String[]{timeZone, formatter.format(start), formatter.format(end), "instert"});
+                dataWriter.writeLine(new String[]{timeZone, formatter.format(start),  String.valueOf(duration), "instert"});
             }
 
             dataWriter.closeWriter();

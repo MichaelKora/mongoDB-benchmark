@@ -12,9 +12,9 @@ public class DataWriter {
             csvWriter = new FileWriter(this.fileName);
             csvWriter.append("TimeZone");
             csvWriter.append(",");
-            csvWriter.append("Start");
+            csvWriter.append("Start time");
             csvWriter.append(",");
-            csvWriter.append("End");
+            csvWriter.append("Duration");
             csvWriter.append(",");
             csvWriter.append("Command");
             csvWriter.append("\n");
