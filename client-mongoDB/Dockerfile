@@ -24,7 +24,7 @@ COPY src ./src
 #RUN mkdir -p /app/csvFile
 #RUN touch /app/csvFile/output.csv
 
-CMD ["./mvnw", "spring-boot:run", "$IP_ADDR"]
+CMD ["./mvnw", "spring-boot:run", "-Dspring-boot.run.arguments=$IPADDR"]
 
 #, "-Dspring-boot.run.arguments=$IPADDR"
 #--build-arg IP_ADDR=
