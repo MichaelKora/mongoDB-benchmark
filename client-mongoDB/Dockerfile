@@ -4,7 +4,7 @@ FROM openjdk:16-alpine3.13
 
 WORKDIR /app
 # while running the app dont forget to mount volume
-# docker build -t client-mg .
+# docker build -t client-mg --build-arg IP_ADDR=127.0.0.1 .
 # docker run -v $(pwd):/app client-mg
 
 #  Set Up the Maven Wrapper
