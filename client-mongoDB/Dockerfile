@@ -4,6 +4,7 @@ FROM openjdk:16-alpine3.13
 
 WORKDIR /app
 # while running the app dont forget to mount volume
+# docker build -t client-mg .
 # docker run -v $(pwd):/app client-mg
 
 #  Set Up the Maven Wrapper
@@ -23,4 +24,4 @@ COPY src ./src
 #RUN mkdir -p /app/csvFile
 #RUN touch /app/csvFile/output.csv
 
-CMD ["./mvnw", "spring-boot:run", "-Drun.arguments=$ipaddresse"]
+CMD ["./mvnw", "spring-boot:run", "-Drun.arguments=$IPADDR"]
