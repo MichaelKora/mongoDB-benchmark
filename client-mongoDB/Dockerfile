@@ -1,4 +1,5 @@
 # syntax=docker/dockerfile:1
+ARG IP_ADDR=localhost
 
 FROM openjdk:16-alpine3.13
 
@@ -25,7 +26,8 @@ COPY src ./src
 #RUN mkdir -p /app/csvFile
 #RUN touch /app/csvFile/output.csv
 
-CMD ["sh","-c", "./mvnw", "spring-boot:run", "-Dspring-boot.run.arguments=${IPADDR}"]
+CMD [ "./mvnw", "spring-boot:run", "-Dspring-boot.run.arguments=$IPADDR"]
+#CMD ["sh","-c", "./mvnw", "spring-boot:run", "-Dspring-boot.run.arguments=$IPADDR"]
 
 #, "-Dspring-boot.run.arguments=$IPADDR"
 #--build-arg IP_ADDR=
