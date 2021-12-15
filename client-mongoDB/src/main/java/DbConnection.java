@@ -1,3 +1,4 @@
+
 import com.mongodb.DBCollection;
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
@@ -8,8 +9,7 @@ import org.bson.Document;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;y
 public class DbConnection {
     @Value("${server.addr}")
     private String ipAddress;
