@@ -20,7 +20,7 @@ public class DbConnection {
 
     public static void main( String args[] ) {
         try {
-             String ipAddress;
+             String ipAddress="";
 
             MongoClient mongoClient = new MongoClient("127.0.0.1" , 27017 );
             //String arg1 = args[0];
