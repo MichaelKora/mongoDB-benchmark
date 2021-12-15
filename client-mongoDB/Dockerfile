@@ -23,11 +23,11 @@ COPY src ./src
 #RUN mkdir -p /app/csvFile
 #RUN touch /app/csvFile/output.csv
 COPY entrypoint.sh ./
-RUN ["chmod", "+x", "./entrypoint.sh"]
+RUN ["chmod", "+rwx", "./entrypoint.sh"]
 
 #RUN chmod +x ./entrypoint.sh
 
-ENTRYPOINT ["./entrypoint.sh"]
+ENTRYPOINT ["sh", "./entrypoint.sh"]
 #CMD ["./mvnw", "spring-boot:run"]
 
 #CMD ["./mvnw", "spring-boot:run", "-Drun.arguments=$ipaddresse"]
