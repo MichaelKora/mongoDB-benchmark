@@ -12,7 +12,6 @@ import java.util.Date;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 public class DbConnection {
  //   @Value("${server.addr}")
-    private String ipAddress;
 
  //  @Value("${server.port}")
     private int port;
@@ -21,6 +20,8 @@ public class DbConnection {
 
     public static void main( String args[] ) {
         try {
+             String ipAddress;
+
             MongoClient mongoClient = new MongoClient("127.0.0.1" , 27017 );
             //String arg1 = args[0];
             // Creating Credentials
