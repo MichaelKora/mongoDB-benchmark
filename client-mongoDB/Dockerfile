@@ -22,7 +22,9 @@ COPY src ./src
 
 #RUN mkdir -p /app/csvFile
 #RUN touch /app/csvFile/output.csv
+COPY entrypoint.sh /
+ENTRYPOINT ["./entrypoint.sh"]
+#CMD ["./mvnw", "spring-boot:run"]
 
-CMD ["./mvnw", "spring-boot:run"]
 #CMD ["./mvnw", "spring-boot:run", "-Drun.arguments=$ipaddresse"]
 # docker run -v $(pwd):/app --network="host" -e ipaddresse='Hello' client-mdb

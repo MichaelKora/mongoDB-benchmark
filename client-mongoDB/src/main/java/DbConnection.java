@@ -9,9 +9,12 @@ import org.bson.Document;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-public class DbConnection {
- //   @Value("${server.addr}")
+//import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+@SpringBootApplication
+public class DbConnection implements ApplicationRunner {
+    @Value("${server.addr}")
+    private String ipAddress;
 
  //  @Value("${server.port}")
     private int port;
@@ -20,8 +23,6 @@ public class DbConnection {
 
     public static void main( String args[] ) {
         try {
-             String ipAddress="";
-
             MongoClient mongoClient = new MongoClient("127.0.0.1" , 27017 );
             //String arg1 = args[0];
             // Creating Credentials
@@ -38,7 +39,7 @@ public class DbConnection {
             String timeZone= formatterTZ.format(System.currentTimeMillis());
             for (int i = 0; i < 10; i++) {
                 System.out.println(i);
-                System.out.print(ipAddress);
+                SpringApplication.run( DbConnection.class, args );
                 // data to be inserted
                 Document document = new Document("name", "Michael Kora");
                 document.append("id", 123456);
@@ -59,6 +60,12 @@ public class DbConnection {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public void run( ApplicationArguments args ) throws Exception
+    {
+        System.out.println("The ip is:" + ipAddress +"\n");
     }
 
 }
