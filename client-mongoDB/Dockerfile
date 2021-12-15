@@ -24,3 +24,4 @@ COPY src ./src
 #RUN touch /app/csvFile/output.csv
 
 CMD ["./mvnw", "spring-boot:run", "-Drun.arguments=$ipaddresse"]
+# docker run -v $(pwd):/app --network="host" -e ipaddresse='Hello' client-mdb
