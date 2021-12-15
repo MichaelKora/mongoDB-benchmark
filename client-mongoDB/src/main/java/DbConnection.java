@@ -11,10 +11,10 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;y
 public class DbConnection {
-    @Value("${server.addr}")
+ //   @Value("${server.addr}")
     private String ipAddress;
 
-    @Value("${server.port}")
+ //  @Value("${server.port}")
     private int port;
 
 
