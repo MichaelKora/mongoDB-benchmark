@@ -23,7 +23,9 @@ COPY src ./src
 #RUN mkdir -p /app/csvFile
 #RUN touch /app/csvFile/output.csv
 COPY entrypoint.sh ./
-RUN chmod +x ./entrypoint.sh
+RUN ["chmod", "+x", "./entrypoint.sh"]
+
+#RUN chmod +x ./entrypoint.sh
 
 ENTRYPOINT ["./entrypoint.sh"]
 #CMD ["./mvnw", "spring-boot:run"]
