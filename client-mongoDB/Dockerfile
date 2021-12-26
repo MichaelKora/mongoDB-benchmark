@@ -17,17 +17,17 @@ COPY .mvn/ .mvn
 COPY mvnw pom.xml ./
 
 COPY mvnw client-mongoDB.iml ./
-
 RUN ./mvnw dependency:go-offline
 
 #RUN curl localhost:27017
 COPY src ./src
-
+COPY run.sh ./run.sh
 #RUN mkdir -p /app/csvFile
 #RUN touch /app/csvFile/output.csv
 
-CMD [ "./mvnw", "spring-boot:run", "-Dspring-boot.run.arguments=$IPADDR"]
+#CMD [ "./mvnw", "spring-boot:run", "-Dspring-boot.run.arguments=$IPADDR"]
 #CMD ["sh","-c", "./mvnw", "spring-boot:run", "-Dspring-boot.run.arguments=$IPADDR"]
+ENTRYPOINT ["run.sh"]
 
 #, "-Dspring-boot.run.arguments=$IPADDR"
 #--build-arg IP_ADDR=

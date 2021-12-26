@@ -13,8 +13,9 @@ import java.util.Date;
 public class DbConnection {
     public static void main( String args[] ) {
         try {
-            MongoClient mongoClient = new MongoClient("127.0.0.1" , 27017 );
-            String arg1 = args[0];
+            String ipAddr = args[0];
+            int portNr = Integer.parseInt(args[1]);
+            MongoClient mongoClient = new MongoClient(ipAddr , portNr );
             // Creating Credentials
             MongoCredential  credential = MongoCredential.createCredential("sampleUser", "benchmarkDb",
                     "password".toCharArray());
@@ -28,8 +29,7 @@ public class DbConnection {
             SimpleDateFormat formatterTZ = new SimpleDateFormat("z");
             String timeZone= formatterTZ.format(System.currentTimeMillis());
             for (int i = 0; i < 10; i++) {
-                System.out.println(i);
-                System.out.print("arg:"+arg1+"\n");
+
                 // data to be inserted
                 Document document = new Document("name", "Michael Kora");
                 document.append("id", 123456);
