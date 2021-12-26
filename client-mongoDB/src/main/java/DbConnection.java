@@ -29,7 +29,7 @@ public class DbConnection {
             SimpleDateFormat formatterTZ = new SimpleDateFormat("z");
             String timeZone= formatterTZ.format(System.currentTimeMillis());
             for (int i = 0; i < 10; i++) {
-
+                System.out.println(ipAddr);
                 // data to be inserted
                 Document document = new Document("name", "Michael Kora");
                 document.append("id", 123456);
