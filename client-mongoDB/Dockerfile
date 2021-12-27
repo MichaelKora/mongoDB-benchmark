@@ -30,7 +30,7 @@ COPY src/main/java/DbConnection.java ./DbConnection.java
 
 #CMD [ "./mvnw", "spring-boot:run", "-Dspring-boot.run.arguments=$IPADDR"]
 #CMD ["sh","-c", "./mvnw", "spring-boot:run", "-Dspring-boot.run.arguments=$IPADDR"]
-ENTRYPOINT ["run.sh"]
+ENTRYPOINT ["./run.sh"]
 
 #, "-Dspring-boot.run.arguments=$IPADDR"
 #--build-arg IP_ADDR=
