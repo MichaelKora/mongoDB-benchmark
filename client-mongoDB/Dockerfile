@@ -21,7 +21,7 @@ RUN ./mvnw dependency:go-offline
 #RUN curl localhost:27017
 COPY src ./src
 COPY run.sh ./run.sh
-RUN chmod 0755
+RUN chmod 755
 COPY src/main/java/DataWriter.java ./DataWriter.java
 COPY src/main/java/DbConnection.java ./DbConnection.java
 
