@@ -21,6 +21,9 @@ RUN ./mvnw dependency:go-offline
 #RUN curl localhost:27017
 COPY src ./src
 COPY run.sh ./run.sh
+COPY src/main/java/DataWriter.java ./DataWriter.java
+COPY src/main/java/DbConnection.java ./DbConnection.java
+
 #RUN mkdir -p /app/csvFile
 #RUN touch /app/csvFile/output.csv
 

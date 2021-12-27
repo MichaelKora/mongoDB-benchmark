@@ -1,3 +1,5 @@
+#!/bin/sh
+
 ipAddr=127.0.0.1
 portNr=27017
 
@@ -10,6 +12,7 @@ then
   fi
 fi
 
-javac src/main/java/DbConnection.java
+echo compiling...
+javac ./DbConnection.java
 
-java src/main/java/DbConnection.java $ipAddr $portNr
+java ./DbConnection.java $ipAddr $portNr
