@@ -2,7 +2,7 @@
 ARG IP_ADDR=localhost
 
 FROM openjdk:16-alpine3.13
-
+RUN apk add --no-cache bash
 WORKDIR /app
 # while running the app dont forget to mount volume
 # docker run -v $(pwd):/app client-mg
