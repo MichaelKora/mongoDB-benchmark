@@ -13,9 +13,10 @@ import java.util.Date;
 public class DbConnection {
     public static void main(String[] args) {
         try {
-           // String ipAddr = args[0];
+           String ipAddr = "Akimby";
            // int portNr = Integer.parseInt(args[1]);
             for (String arg:args){
+                ipAddr =arg;
                 System.out.println(arg);
             }
             MongoClient mongoClient = new MongoClient("localhost" , 27017 );
@@ -48,6 +49,8 @@ public class DbConnection {
 
                 dataWriter.writeLine(new String[]{timeZone, formatter.format(start),  String.valueOf(duration), "instert"});
             }
+            dataWriter.writeLine(new String[]{ipAddr, ipAddr,  ipAddr, ipAddr});
+
 
             dataWriter.closeWriter();
         } catch (Exception e) {
