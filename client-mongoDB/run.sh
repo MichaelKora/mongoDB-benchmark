@@ -3,7 +3,7 @@
 ipAddr=127.0.0.1
 portNr=27017
 ls -al ./src/main/java/
-echo $#
+
 if [ $# -ge 1 ]
 then
   ipAddr=$1
@@ -14,6 +14,7 @@ then
 fi
 
 echo compiling...
+
 #javac ./src/main/java/DbConnection.java
 
 #java ./src/main/java/DbConnection.java $ipAddr $portNr
