@@ -20,7 +20,7 @@ echo compiling...
 #java ./src/main/java/DbConnection.java 
 
 #./mvnw spring-boot:run -Dspring-boot.run.arguments="Michael"
-./mvnw spring-boot:run -Drun.arguments=--customArgument="Michael"
+./mvnw spring-boot:run -Drun.arguments="Michael"
 #./mvnw spring-boot:run -Dexec.args="Michael"
 #./mvnw spring-boot:run
 
