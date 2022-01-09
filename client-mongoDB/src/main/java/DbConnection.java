@@ -13,11 +13,11 @@ public class DbConnection {
 
   public static void main(String[] args) {
     try {
-      //String ipAddr = "Akimby";
+      String ipAddr = "Akimby";
       //int portNr = Integer.parseInt(args[1]);
-      //if (args.length > 0) {
-      //  ipAddr = args[0];
-      //}
+      if (args.length > 0) {
+        ipAddr = args[0];
+      }
       for (String arg:args){
         System.out.println(arg);
       }
