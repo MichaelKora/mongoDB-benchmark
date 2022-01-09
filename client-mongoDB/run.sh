@@ -3,7 +3,7 @@
 ipAddr=127.0.0.1
 portNr=27017
 ls -al ./src/main/java/
-
+echo $#
 if [ $# -ge 1]
 then
   ipAddr=$1
@@ -20,7 +20,7 @@ echo compiling...
 #java ./src/main/java/DbConnection.java 
 
 #./mvnw spring-boot:run -Dspring-boot.run.arguments="Michael"
-./mvnw spring-boot:run -Drun.arguments="$ipAddr, $portNr"
+./mvnw spring-boot:run -Drun.arguments="$ipAddr,$portNr"
 #./mvnw spring-boot:run -Dexec.args="Michael"
 #./mvnw spring-boot:run
 
