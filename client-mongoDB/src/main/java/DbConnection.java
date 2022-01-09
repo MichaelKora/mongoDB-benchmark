@@ -10,6 +10,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class DbConnection {
+
   public static void main(String[] args) {
     try {
       String ipAddr = "Akimby";
@@ -54,7 +55,6 @@ public class DbConnection {
     } catch (Exception e) {
       e.printStackTrace();
     }
-
   }
 
 }
