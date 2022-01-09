@@ -1,5 +1,5 @@
 # mongoDB-benchmark
-You can locally test the benchmark by running the containers on your machine
+You can locally/manually try the benchmark by running the containers on your machine
 
  
 	Start the Server by building and running the image within the the Server(SUT) directory
@@ -11,4 +11,9 @@ You can locally test the benchmark by running the containers on your machine
 		sudo docker build -t mongo-client .
 		sudo docker run -v $(pwd):/app --network="host" mongo-client
 
+		If the Server and the Client are not running on the same host than pass the IP address while running the client container:
+                        sudo docker run -v $(pwd):/app --network="host" mongo-client <ip-address>               
+                
+                if for some reasons the the server is not running on the default mongo DB port(27017) then pass the new port number after the IP-Address
+                        sudo docker run -v $(pwd):/app --network="host" mongo-client <ip-address> <port>
 
