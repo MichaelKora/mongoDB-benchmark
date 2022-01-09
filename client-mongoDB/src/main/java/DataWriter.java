@@ -2,6 +2,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class DataWriter {
+
     private String fileName;
     private FileWriter csvWriter;
 

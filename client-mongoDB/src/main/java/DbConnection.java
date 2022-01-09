@@ -11,10 +11,13 @@ import java.util.Date;
 
 
 public class DbConnection {
-    public static void main( String[] args ) {
+    public static void main(String[] args) {
         try {
            // String ipAddr = args[0];
            // int portNr = Integer.parseInt(args[1]);
+            for (String arg:args){
+                System.out.println(arg);
+            }
             MongoClient mongoClient = new MongoClient("localhost" , 27017 );
             // Creating Credentials
             MongoCredential  credential = MongoCredential.createCredential("sampleUser", "benchmarkDb",
