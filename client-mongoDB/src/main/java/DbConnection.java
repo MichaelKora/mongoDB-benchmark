@@ -15,9 +15,8 @@ public class DbConnection {
         try {
            String ipAddr = "Akimby";
            // int portNr = Integer.parseInt(args[1]);
-            for (String arg:args){
-                ipAddr =arg;
-                System.out.println(arg);
+            if (args.length > 0) {
+                ipAddr = args[0];
             }
             MongoClient mongoClient = new MongoClient("localhost" , 27017 );
             // Creating Credentials
