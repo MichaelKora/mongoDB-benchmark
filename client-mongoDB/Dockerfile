@@ -22,16 +22,18 @@ RUN ./mvnw dependency:go-offline
 COPY src ./src
 COPY run.sh ./run.sh
 RUN chmod +x ./run.sh
-RUN chmod 777 ./run.sh
+#RUN chmod 777 ./run.sh
 COPY src/main/java/DataWriter.java ./DataWriter.java
 COPY src/main/java/DbConnection.java ./DbConnection.java
 
 #RUN mkdir -p /app/csvFile
 #RUN touch /app/csvFile/output.csv
 
+#CMD [ "./mvnw", "spring-boot:run"]
 #CMD [ "./mvnw", "spring-boot:run", "-Dspring-boot.run.arguments=$IPADDR"]
 #CMD ["sh","-c", "./mvnw", "spring-boot:run", "-Dspring-boot.run.arguments=$IPADDR"]
-ENTRYPOINT ["./run.sh"]
+
+ENTRYPOINT [ "sh", "./run.sh"]
 
 #, "-Dspring-boot.run.arguments=$IPADDR"
 #--build-arg IP_ADDR=

@@ -1,7 +1,8 @@
-#!/bin/bash
+#!/bin/sh
 
 ipAddr=127.0.0.1
 portNr=27017
+ls -al ./src/main/java/
 
 if [ $# -ge 1]
 then
@@ -13,6 +14,7 @@ then
 fi
 
 echo compiling...
-javac ./DbConnection.java
+javac ./src/main/java/DbConnection.java
 
-java ./DbConnection.java $ipAddr $portNr
+#java ./src/main/java/DbConnection.java $ipAddr $portNr
+java ./src/main/java/DbConnection.java 
