@@ -14,7 +14,11 @@ then
 fi
 
 echo compiling...
-javac ./src/main/java/DbConnection.java
+#javac ./src/main/java/DbConnection.java
 
 #java ./src/main/java/DbConnection.java $ipAddr $portNr
-java ./src/main/java/DbConnection.java 
+#java ./src/main/java/DbConnection.java 
+
+./mvnw spring-boot:run -Dspring-boot.run.arguments="Michael"
+#./mvnw spring-boot:run
+
