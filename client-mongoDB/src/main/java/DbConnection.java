@@ -46,8 +46,6 @@ public class DbConnection {
 
         dataWriter.writeLine(new String[]{timeZone, formatter.format(start),  String.valueOf(duration), "instert"});
       }
-      dataWriter.writeLine(new String[]{ipAddr, ipAddr,  ipAddr, ipAddr});
-
 
       dataWriter.closeWriter();
     } catch (Exception e) {
