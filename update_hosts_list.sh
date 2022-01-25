@@ -1,7 +1,7 @@
 #!/bin/bash
   
 
-#gcloud compute instances list > current_state.txt
+gcloud compute instances list > current_state.txt
 cat current_state.txt
 echo "[clients]" > /etc/ansible/hosts
 grep "client-vm*" current_state.txt | awk '$6 == "RUNNING" {print $5 } " ansible_ssh_user=michaelkora"' >> /etc/ansible/hosts
