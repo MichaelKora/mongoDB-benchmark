@@ -1,5 +1,2 @@
-NAME         ZONE                    MACHINE_TYPE   PREEMPTIBLE  INTERNAL_IP  EXTERNAL_IP    STATUS
-client-vm-2  asia-southeast1-c       e2-standard-2               10.148.0.2   34.126.80.152  RUNNING
-client-vm-1  australia-southeast1-a  e2-standard-2               10.152.0.2   34.87.210.194  RUNNING
-client-vm-0  europe-west3-a          e2-standard-2               10.156.0.3   34.159.234.47  RUNNING
-server-vm-0  europe-west3-a          e2-standard-2               10.156.0.2   35.198.75.241  RUNNING
+NAME         ZONE            MACHINE_TYPE   PREEMPTIBLE  INTERNAL_IP  EXTERNAL_IP   STATUS
+server-vm-0  europe-west3-a  e2-standard-2               10.156.0.8   34.159.98.79  RUNNING
