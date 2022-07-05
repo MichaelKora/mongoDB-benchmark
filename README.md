@@ -1,3 +1,5 @@
+This project is about measuring the performance of mongo db under some artificial worload. Both of the workload and simulation as well as the measuring are part of this project
+
 # mongoDB-benchmark
 You can locally/manually try the benchmark by running the containers on your machine
 
